@@ -6,7 +6,7 @@
 import numpy as np
 from scipy import io
 import os
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 def get_inv_quat(q):
   temp = q*(-1)
@@ -238,3 +238,11 @@ def estimate_rot(number=1):
         # yaw = np.zeros(roll.shape[0])
 
     return roll,pitch,yaw
+  
+if __name__ == "__main__":
+    r, p, y = estimate_rot(1)
+    plt.plot(r)
+    plt.plot(p)
+    plt.plot(y)
+    plt.show()
+    
